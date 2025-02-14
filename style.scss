@@ -1,0 +1,153 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #0E0E0E;
+}
+
+html {
+    font-size: 1vw;
+}
+
+main {
+    width: 100%;
+}
+
+main .page1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 5rem;
+    text-align: center;
+}
+
+main .page1 img {
+    width: 80%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+main .page1 h1 {
+    font-weight: 100;
+    color: wheat;
+    font-size: 16rem;
+    line-height: 1.1;
+}
+
+main .page1 p {
+    font-size: 5rem;
+    font-weight: 100;
+    margin: 0.9rem 0rem;
+    color: wheat;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+main .page1 p br {
+    display: none;
+}
+
+.page2 {
+    width: 100%;
+    padding: 4rem 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.page2 .marquee {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    color: wheat;
+    position: relative;
+}
+
+.page2 .marquee::after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    background: linear-gradient(to right, #0E0E0E, transparent);
+    height: 100%;
+    width: 50%;
+}
+
+.page2 .marquee::before {
+    text-align: end;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    z-index: 99;
+    background: linear-gradient(to left, #0E0E0E, transparent);
+}
+
+.page2 .marquee .text {
+    animation: scroller 10s linear infinite both;
+    display: flex;
+    padding: 0rem 1.5rem;
+    gap: 3rem;
+}
+
+.page2 .marquee .text p {
+    text-transform: capitalize;
+    font-size: 5rem;
+    font-weight: 300;
+}
+
+@keyframes scroller {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (min-Width: 1020px) {
+    html {
+        font-size: clamp(16px, 1vw, 20px);
+    }
+
+    main .page1 h1 {
+        font-size: 6.5rem;
+    }
+
+    main .page1 img {
+        width: 30%;
+    }
+
+    main .page1 p {
+        font-size: 1.3rem;
+    }
+
+    main .page1 p br {
+        display: block;
+    }
+
+    main .page2 .marquee {
+        display: flex;
+        width: 50%;
+        overflow: hidden;
+        color: wheat;
+        position: relative;
+
+        .text {
+            p {
+                font-size: 2rem;
+
+            }
+        }
+    }
+}
